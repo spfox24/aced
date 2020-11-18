@@ -1,0 +1,28 @@
+{
+  "name": "aced",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spfox24/aced.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/spfox24/aced/issues"
+  },
+  "homepage": "https://github.com/spfox24/aced#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.10.15",
+    "morgan": "^1.10.0"
+  }
+}
