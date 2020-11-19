@@ -3,12 +3,11 @@ const express = require('express');
 const port = 3000;
 
 const indexRouter = require('./routes/index');
+const scoresRouter = require('./routes/scores');
 
 
 
 const morgan = require('morgan');
-
-
 const methodOverride = require('method-override');
 
 require('./config/database');
@@ -27,6 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // routes
 app.use('/', indexRouter);
+app.use('/scores', scoresRouter);
 
 
 

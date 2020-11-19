@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+    
+    <main>
+        <table>
+            <thead>
+                <th>Course</th>
+                <th>Date</th>
+                <th>Score</th>
+                <th>Round Detail</th>
+            </thead>
+            <tbody>
+                <% scores.forEach(score => { %>
+                    <tr>
+                        <td><%= score.course %></td>
+                        <td><%= score.date %></td>
+                        <td><%= score.score %></td>
+                        <td><a href="/scores/<%= score._id %>">Detail</a></td>
+                    </tr>
+               <% }) %>
+            </tbody>
+        </table>
+    </main>
+
+    <%- include('../partials/footer') %>
