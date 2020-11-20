@@ -2,15 +2,17 @@
 
 <main>
     <section>
-        <div>Course: </div>
+        <label>Course: </label>
             <div><%= scores.course %></div>
-        <div>Date: </div>
-            <div><%= scores.date %></div>
-        <div>Score: </div>
+        <label>Date: </label>
+            <div><%= scores.date.toLocaleDateString() %></div>
+        <label>Score: </label>
             <div><%= scores.score %></div>
-        <input type="button" value="Edit Score">
+        <a href="/scores/<%= scores._id %>/edit">
+            <input type="button" value="Edit Score">
+        </a>
     </section>
-    <h2>Course Condition</h2>
+    <h3>Course Condition</h3>
     <form action="/scores/<%= scores._id %>/conditions">
         <label>Review:</label>
         <textarea name="content"></textarea>
