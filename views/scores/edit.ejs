@@ -1,9 +1,9 @@
 <%- include('../partials/header') %>
 
 <main>
-    <form action="/scores/<%= scores._id %>?_method=PUT" method="POST">
+    <form action="/scores/<%= scoreId %>?_method=PUT" method="POST">
         <label>Course:
-            <select name="course">
+            <select name="course" value="<%= score.course %>">
                 <option value="Apache Shores">Apache Shores</option>
                 <option value="Bible Ridge">Bible Ridge</option>
                 <option value="Brazos East">Brazos East</option>
@@ -31,10 +31,10 @@
         <label>Score:
             <input type="text" name="score" placeholder="Score">
         </label>
-        <input type="submit" value="Add Round">
+        <input type="submit" value="Edit Round">
     </form>
     <span>
-        <a href="/scores/">Cancel</a>
+        <a href="/scores/<%= scoreId %>">Cancel</a>
     </span>
 </main>
 
