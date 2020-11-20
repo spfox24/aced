@@ -13,7 +13,7 @@
         </a>
     </section>
     <h3>Course Condition</h3>
-    <form action="/scores/<%= scores._id %>/conditions">
+    <form action="/scores/<%= scores._id %>/conditions" method="POST">
         <label>Review:</label>
         <textarea name="content"></textarea>
         <label>Rating:</label>
@@ -26,7 +26,26 @@
         </select>
         <input type="submit" value="Add Condition">
     </form>
-
+<% if (scores.condition.length) { %>
+    <table>
+        <thead>
+            <tr>
+                <th>Condition</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+    <% scores.condition.forEach(function(c) { %>
+            <tr>
+                <td><%= c.content %></td>
+                <td><%= c.rating %></td>
+            </tr>
+    <% }); %>
+        </tbody>
+    </table>
+<% } else { %>
+    <h5>No Conditions Reported</h5>
+<% } %>
 </main>
 
 <%- include('../partials/footer') %>

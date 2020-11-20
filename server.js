@@ -5,6 +5,7 @@ const port = 3000;
 const indexRouter = require('./routes/index');
 const scoresRouter = require('./routes/scores');
 const highScoreRouter = require('./routes/highscores');
+const conditionsRouter = require('./routes/conditions');
 
 
 
@@ -29,6 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', indexRouter);
 app.use('/scores', scoresRouter);
 app.use('/highscores', highScoreRouter);
+app.use('/', conditionsRouter);
 
 
 
