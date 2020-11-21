@@ -3,6 +3,7 @@
     --font-two: 'Montserrat Alternates', sans-serif;
     --font-three: 'Text Me One', sans-serif;
     --font-four: 'Ubuntu', sans-serif;
+    --font-five: 'Sonsie One', cursive;
 }
 
 * {
@@ -36,22 +37,40 @@ nav {
     background-image: url('/imgs/mountainhorizon3.jpg');
     background-position: center;
     background-size: cover;
+    border-bottom: 2px solid #1D3557;
+    box-shadow: 0px 1px 2px 1px #cccccc;
 }
 
 span.nav-toggle {
-    font-size: 30px;
+    font-size: 25px;
     display: inline-block;
     position: absolute;
     top: 20px;
-    left: 20px;
-    color: #1D3557;
+    right: 20px;
+    color: #f1faee;
     text-shadow: 1px 2px 2px #457b9d;
 }
 
 .logo {
-    margin: 40px 0 40px 0px;
-    height: 200px;
-    width: 200px;
+    margin: 10px 0px 5px 20px;
+    height: 60px;
+    width: 60px;
+}
+
+.heading {
+    text-align: center;
+    font-family: var(--font-five);
+    font-size: 50px;
+    color: #f1faee;
+    text-shadow: 2px 1px 6px #1D3557;
+}
+
+.line-break {
+    border: 1px solid #f1faee;
+    box-shadow: 2px 1px 6px #1D3557;
+    width: 125px;
+    margin: 0 auto;
+    margin-bottom: 75px;
 }
 
 ul {
@@ -88,7 +107,7 @@ ul li:hover {
     display: flex;
 }
 
-a {
+.menu {
     color: #f1faee;
     text-decoration: none;
     text-shadow: 1px 1px 1px #1d3557;
@@ -102,20 +121,82 @@ main {
     background: #f1faee;
 }
 
-@media screen and (min-width: 800px) {
-    nav {
-        height: 150px;
-        flex-direction: row;
-    }
+footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    background-image: url(/imgs/stream.jpg);
+    background-size: cover;
+    background-position: center;
+    border-top: 2px solid #1D3557;
+    box-shadow: 0px 1px 2px 1px #cccccc;
+}
 
-    .logo {
- 
+.footer-link {
+    color: #f1faee;
+    text-decoration: none;
+}
+
+#udisc {
+    margin-right: 20px;
+    text-shadow: 1px 1px 1px #1D3557;
+}
+
+.jomez, .innova, .dynamic-discs {
+    height: 26px;
+    width: 26px;
+    margin-right: 20px;
+    margin-top: 10px;
+    border-radius: 50%;
+    border: 2px solid #f1faee;
+    background: #f1faee;
+    box-shadow: 1px 1px 5px #1D3557;
+}
+
+.discraft {
+    position: relative;
+    width: 26px;
+    height: 26px;
+    margin-right: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px solid #f1faee;
+    background: #f1faee;
+    box-shadow: 1px 1px 5px #1D3557;
+}
+
+.discraft img{
+    width: 100%;
+    height: auto;
+}
+
+p {
+    font-family: var(--font-one);
+    font-size: 6px;
+    color: #f1faee;
+    margin-bottom: 5px;
+    position: absolute;
+    bottom: 0;
+}
+
+@media screen and (min-width: 500px) {
+    nav {
+        height: 200px;
+        flex-direction: row;
+        background-position: bottom;
     }
     ul {
         display: flex;
         justify-content: flex-end;
         width: 80%;
         flex-direction: row;
+        align-items: center;
     }
     ul li {
         display: inline-block;
@@ -126,5 +207,9 @@ main {
     }
     span.nav-toggle {
         display: none;
+    }
+    .logo {
+        height: 125px;
+        width: 125px;
     }
 }
