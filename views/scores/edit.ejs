@@ -1,7 +1,7 @@
 <%- include('../partials/header') %>
 
 <main>
-    <form action="/scores/<%= scoreId %>?_method=PUT" method="POST">
+    <form action="/scores/<%= scoreId %>?_method=PUT" method="POST" class="new-form">
         <label>Course:
             <select name="course" value="<%= score.course %>">
                 <option value="Apache Shores">Apache Shores</option>
@@ -23,19 +23,19 @@
                 <option value="Wells Branch">Wells Branch</option>
                 <option value="Wilco">Wilco</option>
                 <option value="Zilker">Zilker</option>
-            </select>
+            </select><br>
         </label>
         <label>Date:
             <input type="date" name="date">
-        </label>
+        </label><br>
         <label>Score:
-            <input type="text" name="score" placeholder="Score">
+            <input type="text" name="score" placeholder="Score" class="text-input">
         </label>
-        <input type="submit" value="Edit Round">
+        <input type="submit" value="Edit Round" class="button">
+        <span>
+            <a href="/scores/<%= scoreId %>" class="cancel">Cancel</a>
+        </span>
     </form>
-    <span>
-        <a href="/scores/<%= scoreId %>">Cancel</a>
-    </span>
 </main>
 
 <%- include('../partials/footer') %>

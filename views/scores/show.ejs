@@ -1,51 +1,53 @@
 <%- include('../partials/header') %>
 
-<main>
-    <section>
-        <label>Course: </label>
-        <div><%= scores.course %></div>
-        <label>Date: </label>
-        <div><%= scores.date.toLocaleDateString() %></div>
-        <label>Score: </label>
-        <div><%= scores.score %></div>
+<main class="show-page">
+    <section class="show-main">
+        <label>COURSE: </label>
+        <div class="show-text"><%= scores.course %></div>
+        <label>DATE: </label>
+        <div class="show-text"><%= scores.date.toLocaleDateString() %></div>
+        <label>SCORE: </label>
+        <div class="show-text"><%= scores.score %></div>
         <a href="/scores/<%= scores._id %>/edit">
-            <input type="button" value="Edit Score">
+            <input type="button" value="Edit Score" class="button">
         </a>
     </section>
-    <h3>Course Condition</h3>
+    <h3>COURSE CONDITION</h3>
     <form action="/scores/<%= scores._id %>/conditions" method="POST">
-        <label>Review:</label>
-        <textarea name="content"></textarea>
-        <label>Rating:</label>
+        <label>REVIEW:</label><br>
+        <textarea name="content" class="text-box"></textarea><br>
+        <label>RATING:</label><br>
         <select name="rating">
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select>
-        <input type="submit" value="Add Condition">
+        </select><br>
+        <input type="submit" value="Add Condition" class="button">
     </form>
 <% if (scores.condition.length) { %>
-    <table>
-        <thead>
-            <tr>
-                <th>Condition</th>
-                <th>Rating</th>
-            </tr>
-        </thead>
-        <tbody>
-    <% scores.condition.forEach(function(c) { %>
-            <tr>
-                <td><%= c.content %></td>
-                <td><%= c.rating %></td>
-            </tr>
-    <% }); %>
-        </tbody>
-    </table>
-<% } else { %>
-    <h5>No Conditions Reported</h5>
-<% } %>
+    <div id="show-table">
+        <table>
+            <thead>
+                <tr>
+                    <th>Condition</th>
+                    <th>Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+        <% scores.condition.forEach(function(c) { %>
+                <tr>
+                    <td><%= c.content %></td>
+                    <td><%= c.rating %></td>
+                </tr>
+        <% }); %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <h5>No Conditions Reported</h5>
+    <% } %>
+    </div>
 </main>
 
 <%- include('../partials/footer') %>`
