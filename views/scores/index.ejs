@@ -12,7 +12,7 @@
                 <% scores.forEach(score => { %>
                     <tr>
                         <td><%= score.course %></td>
-                        <td><%= score.date %></td>
+                        <td><%= score.date.toLocaleDateString() %></td>
                         <td><%= score.score %></td>
                         <td><a href="/scores/<%= score._id %>" class="info"><i class="fas fa-info-circle fa-lg"></i></a></td>
                     </tr>

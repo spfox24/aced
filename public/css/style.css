@@ -351,31 +351,59 @@ tbody td {
     opacity: .85;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 600px) {
     nav {
         height: 200px;
         flex-direction: row;
         background-position: bottom;
     }
+
+    hr {
+        display: none;
+    }
+
+    h1 {
+        display: none;
+    }
+
+    span.nav-toggle {
+        display: none;
+    }
+
     ul {
         display: flex;
         justify-content: flex-end;
-        width: 80%;
+        width: 100%;
         flex-direction: row;
         align-items: center;
     }
+
     ul li {
         display: inline-block;
-        margin: 0 70px 0 0;
+        margin: 0 20px 0 0;
         text-align: left;
         border-bottom-style: none;
         padding: 0;
     }
-    span.nav-toggle {
-        display: none;
-    }
+
     .logo {
         height: 125px;
         width: 125px;
+        margin: 30px 0 0 10px;
+        position: absolute;
+        left: 0;
+        top: 0;
     }
+
+    .discraft, .dynamic, .jomez, .innova {
+        height: 30px;
+        width: 30px;
+        margin-right: 30px;
+    }
+
+    #udisc {
+        font-size: 30px;
+        margin-right: 30px;
+    }
+
 }
