@@ -6,7 +6,8 @@ module.exports = {
     new: newScore,
     create,
     edit,
-    update
+    update,
+    delete: deleteRound
 }
 
 function index(req, res) {
@@ -56,5 +57,14 @@ function edit(req, res) {
 function update(req, res) {
     Score.findByIdAndUpdate(req.params.id, req.body, function(err, score) {
         res.redirect(`/scores/${req.params.id}`);
+    });
+}
+
+function deleteRound(req, res) {
+    Score.findByIdAndDelete(req.params.id, function(err, score) {
+        if(err) console.log(err);
+        score.save(function(err) {
+            res.redirect(`/scores`);
+        });
     });
 }

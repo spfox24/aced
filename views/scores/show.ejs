@@ -1,11 +1,12 @@
 <%- include('../partials/header') %>
 
 <main class="show-page">
+    
     <section class="show-main">
         <label>COURSE: </label>
         <div class="show-text"><%= scores.course %></div>
         <label>DATE: </label>
-        <div class="show-text"><%= scores.date.toLocaleDateString() %></div>
+        <div class="show-text"><%= scores.date %></div>
         <label>SCORE: </label>
         <div class="show-text"><%= scores.score %></div>
         <a href="/scores/<%= scores._id %>/edit">
@@ -37,16 +38,21 @@
             </thead>
             <tbody>
         <% scores.condition.forEach(function(c) { %>
-                <tr>
-                    <td><%= c.content %></td>
-                    <td><%= c.rating %></td>
-                </tr>
+                    <tr>
+                            <td><%= c.content %></td>
+                            <td><%= c.rating %></td>
+                        </tr>
         <% }); %>
             </tbody>
         </table>
     <% } else { %>
         <h5>No Conditions Reported</h5>
     <% } %>
+    
+    <form class="delete-form" action="/scores/<%= scores._id %>?_method=DELETE" method="POST">
+        <button class="button" type="submit">Delete Round</button>
+    </form>
+    
     </div>
 </main>
 

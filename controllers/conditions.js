@@ -1,7 +1,7 @@
 const Score = require('../models/score');
 
 module.exports = {
-    create
+    create,
 };
 
 function create(req, res) {
@@ -13,3 +13,6 @@ function create(req, res) {
         });
     });
 }
+
+
+
