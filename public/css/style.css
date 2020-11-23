@@ -405,5 +405,73 @@ tbody td {
         font-size: 30px;
         margin-right: 30px;
     }
+}
+
+@media screen and (min-width: 740px) {
+    .logo {
+        height: 150px;
+        width: 150px;
+        margin: 20px 0 0 10px;
+    }
+
+    ul li {
+        display: inline-block;
+        margin: 0 20px 0 0;
+        text-align: left;
+        border-bottom-style: none;
+        padding: 0;
+        font-size: 18px;
+    }
+
+    thead {
+        font-size: 16px;
+    }
+    
+    tbody {
+        font-size: 14px;
+    }
+
+    .show-main {
+        width: 350px;
+    }
+
+    label {
+        font-family: var(--font-six);
+        font-size: 26px;
+        color: #1D3557;
+        text-shadow: 1px 1px 1px #cccccc;
+        padding: 2px;
+    }
+
+    .show-text {
+        font-family: var(--font-four);
+        font-size: 20px;
+        color: #1D3557;
+    }
+
+    #show-table {
+        width: 350px;
+    }
+
+    .button {
+        height: 30px;
+        font-size: 16px;
+    }
+
+    .discraft, .dynamic, .jomez, .innova {
+        height: 35px;
+        width: 35px;
+        margin-right: 40px;
+        margin-bottom: 10px;
+    }
+
+    #udisc {
+        font-size: 35px;
+        margin-right: 40px;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
 
 }
