@@ -12,6 +12,8 @@ const conditionsRouter = require('./routes/conditions');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 
+
+require('dotenv').config()
 require('./config/database');
 
 // express app

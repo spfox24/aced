@@ -6,7 +6,7 @@
         <label>COURSE: </label>
         <div class="show-text"><%= scores.course %></div>
         <label>DATE: </label>
-        <div class="show-text"><%= scores.date %></div>
+        <div class="show-text"><%= scores.date.toLocaleDateString() %></div>
         <label>SCORE: </label>
         <div class="show-text"><%= scores.score %></div>
         <a href="/scores/<%= scores._id %>/edit">
@@ -37,7 +37,7 @@
                 </tr>
             </thead>
             <tbody>
-        <% scores.condition.forEach(function(c) { %>
+        <% scores.condition.forEach(function(c) { %> 
                     <tr>
                             <td><%= c.content %></td>
                             <td><%= c.rating %></td>
@@ -45,6 +45,8 @@
         <% }); %>
             </tbody>
         </table>
+    <% } else if (scores.condition.length > 1) { %>
+        <% return null %>
     <% } else { %>
         <h5>No Conditions Reported</h5>
     <% } %>

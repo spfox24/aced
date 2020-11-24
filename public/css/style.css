@@ -219,6 +219,7 @@ select {
     font-size: 12px;
     justify-content: center;
     margin: 10px;
+    cursor: pointer;
 }
 
 .button:hover {
