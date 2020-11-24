@@ -3,5 +3,7 @@ module.exports = {
 }
 
 function index(req, res) {
-    res.render('highscore');
+    res.render('highscore', {
+        user: req.user
+    });
 }

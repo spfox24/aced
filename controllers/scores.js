@@ -14,7 +14,8 @@ function index(req, res) {
     Score.find({}, function (err, scores) {
         req.date = new Date().toLocaleDateString();
         res.render('scores/index', {
-            scores
+            scores,
+            user: req.user
         });
     });
 }
@@ -24,14 +25,16 @@ function show(req, res) {
     Score.findById(req.params.id, function (err, scores) {
         req.date = new Date().toLocaleDateString();
         res.render('scores/show', {
-            scores
+            scores,
+            user: req.user
         });
     });
 }
 
 function newScore(req, res) {
     res.render('scores/new', {
-        title: 'Add Score'
+        title: 'Add Score',
+        user: req.user
     });
 }
 
@@ -50,7 +53,10 @@ function edit(req, res) {
     scoreId = req.params.id;
 
     Score.findById(req.params.id, function(err, score) {
-        res.render('scores/edit', { score });
+        res.render('scores/edit', { 
+            score,
+            user: req.user
+         });
     });
 }
 
@@ -68,3 +74,4 @@ function deleteRound(req, res) {
         });
     });
 }
+

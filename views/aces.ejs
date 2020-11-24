@@ -1,0 +1,35 @@
+<%- include('./partials/header'); %>
+
+<main class="container">
+    <div class="row">
+      <div id="players">
+        <% players.forEach(function(player) { %>
+          <div class="card">
+            <div class="card-content">
+              <div>
+                <span class="card-title">
+                  <span class="student-name"><%= player.name %></span>
+                </span>
+              </div>
+              <ul class="collection">
+                <% player.aces.forEach(function(ace) { %>
+                  <li class="collection-item"><%= ace.text %></li>
+                <% }) %>
+              </ul>
+              
+              <% if(player._id.equals(user && user._id)) { %>
+                <div class="card-action">
+                  <form action="/aces" method="POST">
+                    <input type="text" name="text">
+                    <button type="submit" class="button">Add Ace</button>
+                  </form>
+                </div>
+              <% } %>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </main>
+
+<%- include('./partials/footer'); %>

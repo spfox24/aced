@@ -25,7 +25,6 @@ passport.use(new GoogleStrategy({
     });
 }));
 
-
 passport.serializeUser(function(player, done) {
     done(null, player);
 });

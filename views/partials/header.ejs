@@ -38,13 +38,16 @@
                         <a href="/scores/new" class="menu">New Score</a>
                     </li>
                     <li>
+                        <a href="/aces" class="menu">Add Ace</a>
+                    </li>
+                    <li>
                         <a href="/highscores" class="menu">High Scores</a>
                     </li>
                     <li>
                     <% if (user) { %>
-                        <a href="/logout">LogOut</a>
+                        <a href="/logout" class="menu-log"><i class="fad fa-sign-out-alt"></i></a>
                     <% } else { %>
-                        <a href="/auth/google">LogIn</a>
+                        <a href="/auth/google" class="menu-log"><i class="fad fa-sign-in-alt"></i></a>
                     <% } %>
                     </li>
                 </ul>

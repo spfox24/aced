@@ -101,7 +101,7 @@ ul li:first-child {
 }
 
 ul li:hover {
-    opacity: 0.5;
+    opacity: 0.75;
 }
 
 .active {
@@ -112,6 +112,13 @@ ul li:hover {
     color: #f1faee;
     text-decoration: none;
     text-shadow: 1px 1px 1px #1d3557;
+}
+
+.menu-log {
+    color: #f1faee;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px #1d3557;
+    font-size: 22px;
 }
 
 main {

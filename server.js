@@ -8,7 +8,7 @@ const indexRouter = require('./routes/index');
 const scoresRouter = require('./routes/scores');
 const highScoreRouter = require('./routes/highscores');
 const conditionsRouter = require('./routes/conditions');
-
+const playersRouter = require('./routes/players');
 
 
 const morgan = require('morgan');
@@ -43,7 +43,7 @@ app.use('/', indexRouter);
 app.use('/scores', scoresRouter);
 app.use('/highscores', highScoreRouter);
 app.use('/', conditionsRouter);
-
+app.use('/', playersRouter);
 
 
 
