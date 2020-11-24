@@ -40,6 +40,13 @@
                     <li>
                         <a href="/highscores" class="menu">High Scores</a>
                     </li>
+                    <li>
+                    <% if (user) { %>
+                        <a href="/logout">LogOut</a>
+                    <% } else { %>
+                        <a href="/auth/google">LogIn</a>
+                    <% } %>
+                    </li>
                 </ul>
 
             </nav>
