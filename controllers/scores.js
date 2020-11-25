@@ -1,4 +1,5 @@
 const Score = require('../models/score');
+const Player = require('../models/player');
 
 module.exports = {
     index,
@@ -12,6 +13,7 @@ module.exports = {
 
 function index(req, res) {
     Score.find({}, function (err, scores) {
+
         req.date = new Date().toLocaleDateString();
         res.render('scores/index', {
             scores,
@@ -21,7 +23,7 @@ function index(req, res) {
 }
 
 function show(req, res) {
-
+    
     Score.findById(req.params.id, function (err, scores) {
         req.date = new Date().toLocaleDateString();
         res.render('scores/show', {

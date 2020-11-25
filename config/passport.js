@@ -7,6 +7,7 @@ passport.use(new GoogleStrategy({
     clientSecret: process.env.GOOGLE_SECRET,
     callbackURL: process.env.GOOGLE_CALLBACK
 }, function(accessToken, refreshToken, profile, cb) {
+    console.log(profile);
     Player.findOne({ googleId: profile.id }, function(err, player) {
         if(err) return cb(err);
         if(player) {
@@ -15,7 +16,8 @@ passport.use(new GoogleStrategy({
             const newPlayer = new Player({
                 name: profile.displayName,
                 email: profile.emails[0].value,
-                googleId: profile.id
+                googleId: profile.id,
+                avatarURL: profile._json.picture
             });
             newPlayer.save(function(err) {
                 if(err) return cb(err);

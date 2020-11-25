@@ -31,7 +31,10 @@ const scoreSchema = new Schema({
         required: true
     },
     condition: [conditionSchema],
-    userId: [{type: mongoose.Types.ObjectId, ref: 'Player'}],
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: 'Player'
+    } 
 }, {
     timestamps: true
 });

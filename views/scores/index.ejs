@@ -3,6 +3,7 @@
     <main>
         <table>
             <thead>
+                <th>Player</th>
                 <th>Course</th>
                 <th>Date</th>
                 <th>Score</th>
@@ -11,6 +12,7 @@
             <tbody>
                 <% scores.forEach(score => { %>
                     <tr>
+                        <td><%= score.userId %></td>
                         <td><%= score.course %></td>
                         <td><%= score.date.toLocaleDateString() %></td>
                         <td><%= score.score %></td>

@@ -8,22 +8,68 @@
             <div class="card-content">
               <div>
                 <span class="card-title">
-                  <span class="student-name"><%= player.name %></span>
+                  <i id="user-icon" class="fas fa-user-astronaut"></i>
+                  <span class="player-name"><%= player.name %></span>
                 </span>
               </div>
-              <ul class="collection">
-                <% player.aces.forEach(function(ace) { %>
-                  <li class="collection-item"><%= ace.text %></li>
+              <table class="ace-table">
+                <thead>
+                  <th>Course</th>
+                  <th>Hole</th>
+                  <th>Date</th>
+                </thead>
+                <tbody>
+                  <% player.aces.forEach(function(ace) { %>
+                  <tr>
+                      <td><%= ace.course %></td>
+                      <td><%= ace.hole %></td>
+                      <td><%= ace.date.toLocaleDateString() %></td>
+                  </tr>
+                </tbody>
                 <% }) %>
-              </ul>
+              </table>
+
+
               
               <% if(player._id.equals(user && user._id)) { %>
                 <div class="card-action">
-                  <form action="/aces" method="POST">
-                    <input type="text" name="text">
-                    <button type="submit" class="button">Add Ace</button>
-                  </form>
+                  <form action="/aces" method="POST" class="ace-form">
+                      <label>Course:
+                          <select name="course">
+                              <option value="Apache Shores">Apache Shores</option>
+                              <option value="Bible Ridge">Bible Ridge</option>
+                              <option value="Brazos East">Brazos East</option>
+                              <option value="Brushy Creek">Brushy Creek</option>
+                              <option value="Cat Hollow">Cat Hollow</option>
+                              <option value="Circle C">Circle C</option>
+                              <option value="Davis">Davis</option>
+                              <option value="Falcon Pointe">Falcon Pointe</option>
+                              <option value="Flying Armadillo">Flying Armadillo</option>
+                              <option value="Mary Moore Seawright">Mary Moore Seawright</option>
+                              <option value="Met Center">Met Center</option>
+                              <option value="Northtown">Northtown</option>
+                              <option value="Old Settlers Park">Old Settlers Park</option>
+                              <option value="Rivery">Rivery</option>
+                              <option value="Roy G Guerrerro">Roy G Guerrerro</option>
+                              <option value="San Gabriel">San Gabriel</option>
+                              <option value="Wells Branch">Wells Branch</option>
+                              <option value="Wilco">Wilco</option>
+                              <option value="Zilker">Zilker</option>
+                          </select>
+                      </label><br>
+                      <label>Hole:
+                          <input type="text" name="hole" placeholder="Hole" class="text-input">
+                      </label><br>
+                      <label>Date:
+                          <input type="date" name="date">
+                      </label><br>
+                      <input type="submit" value="Add Ace" class="button">
+                  </form>               
                 </div>
+                
+                <!-- <form class="delete-form" action="/aces/<%= user._id %>?_method=DELETE" method="POST"> -->
+                  <!-- <button class="button" type="submit">Delete Ace</button> -->
+                <!-- </form> -->
               <% } %>
             </div>
           </div>
