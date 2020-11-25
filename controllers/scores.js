@@ -13,7 +13,6 @@ module.exports = {
 
 function index(req, res) {
     Score.find({}, function (err, scores) {
-
         req.date = new Date().toLocaleDateString();
         res.render('scores/index', {
             scores,

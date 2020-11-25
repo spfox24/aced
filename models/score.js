@@ -31,10 +31,10 @@ const scoreSchema = new Schema({
         required: true
     },
     condition: [conditionSchema],
-    userId: {
+    userId: [{
         type: Schema.Types.ObjectId,
         ref: 'Player'
-    } 
+    }] 
 }, {
     timestamps: true
 });
