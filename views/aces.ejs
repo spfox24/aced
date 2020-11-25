@@ -29,7 +29,6 @@
                 <% }) %>
               </table>
 
-
               
               <% if(player._id.equals(user && user._id)) { %>
                 <div class="card-action">
@@ -65,13 +64,12 @@
                       </label><br>
                       <input type="submit" value="Add Ace" class="button">
                   </form>               
+                  <form class="delete-form" action="/aces/<%= user._id %>?_method=DELETE" method="POST">
+                    <button class="del-ace" type="submit"><i class="fas fa-trash-alt"></i></button>
+                  </form>
                 </div>
-                
-                <!-- <form class="delete-form" action="/aces/<%= user._id %>?_method=DELETE" method="POST"> -->
-                  <!-- <button class="button" type="submit">Delete Ace</button> -->
-                <!-- </form> -->
-              <% } %>
-            </div>
+                <% } %>
+              </div>
           </div>
         <% }) %>
       </div>

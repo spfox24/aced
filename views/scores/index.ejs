@@ -1,6 +1,7 @@
 <%- include('../partials/header') %>
     
     <main>
+    <% if (scores.length) { %>
         <table>
             <thead>
                 <th>Player</th>
@@ -21,6 +22,15 @@
                <% }) %>
             </tbody>
         </table>
+
+        <% } else { %>
+            <section class="main-empty">
+                <h2>Welcome to ACED</h2>
+                <div>
+                    <img src="/imgs/AcedLogo.png" alt="logo" class="index-logo">
+                </div>
+           </section>     
+        <% } %>
     </main>
 
     <%- include('../partials/footer') %>
