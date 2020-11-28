@@ -1,5 +1,4 @@
 const Score = require('../models/score');
-const Player = require('../models/player');
 
 module.exports = {
     index,
@@ -12,6 +11,16 @@ module.exports = {
 }
 
 function index(req, res) {
+    Score.find({})
+    .populate('userId').exec(function(err, score) {
+        console.log(score);
+                req.date = new Date().toLocaleString();
+                res.render('scores/index', { 
+                    score, user: req.user
+            });
+        });
+    }
+    /*
     Score.find({}, function (err, scores) {
         req.date = new Date().toLocaleDateString();
         res.render('scores/index', {
@@ -19,7 +28,7 @@ function index(req, res) {
             user: req.user
         });
     });
-}
+    */
 
 function show(req, res) {
     
@@ -42,10 +51,11 @@ function newScore(req, res) {
 function create(req, res) {
 
     const score = new Score(req.body);
+    req.body.userId = req.user.id
 
     score.save(function (err) {
         if (err) return res.render('scores/new');
-        console.log(req.body);
+        // console.log(req.body);
         res.redirect('/scores');
     });
 }

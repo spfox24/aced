@@ -3,7 +3,7 @@ const Player = require('../models/player');
 module.exports = {
     index,
     addAce,
-    delAce
+    delAce,
 };
 
 function index(req, res) {
