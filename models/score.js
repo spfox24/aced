@@ -15,6 +15,10 @@ const conditionSchema = new Schema({
 });
 
 const scoreSchema = new Schema({
+    player: {
+        type: String,
+        required: true
+    }, 
     course: {
         type: String,
         enum: ['Apache Shores', 'Bible Ridge', 'Brazos East', 'Brushy Creek', 'Cat Hollow', 'Circle C',
