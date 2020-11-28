@@ -49,7 +49,8 @@ function newScore(req, res) {
 }
 
 function create(req, res) {
-    req.body.userId = req.user.id
+    console.log(req.player);
+    req.body.userId = req.player.id
 
     const score = new Score(req.body);
 
