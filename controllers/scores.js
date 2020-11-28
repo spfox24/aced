@@ -49,13 +49,12 @@ function newScore(req, res) {
 }
 
 function create(req, res) {
-   req.body.userId = req.player.id
 
     const score = new Score(req.body);
 
     score.save(function (err) {
         if (err) return res.render('scores/new');
-        // console.log(req.body);
+
         res.redirect('/scores');
     });
 }
