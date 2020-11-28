@@ -49,7 +49,7 @@ function newScore(req, res) {
 }
 
 function create(req, res) {
-ç    req.body.userId = req.player.id
+   req.body.userId = req.player.id
 
     const score = new Score(req.body);
 
