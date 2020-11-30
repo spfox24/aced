@@ -35,6 +35,9 @@ Current build includes:
 - Heroku
 
 ## Getting Started
+#### Trello:
+https://trello.com/b/VfoVTKjR/project-2-board
+#### App:
 https://aced-app.herokuapp.com/
 
 ### Future Versions to Include
